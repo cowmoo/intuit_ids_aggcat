@@ -149,7 +149,8 @@ module IntuitIdsAggcat
             url = "#{url}&txnEndDate=#{txn_end}"
           end
           response = oauth_get_request url, oauth_token_info
-          xml = REXML::Document.new response[:response_xml].inspect
+          return :response_xml
+          #xml = REXML::Document.new response[:response_xml].inspect
           #tl = IntuitIdsAggcat::TransactionList.load_from_xml xml.root
         end
 
